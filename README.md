@@ -10,16 +10,16 @@ El archivo es almacenado en la misma ruta del script, en este caso es: `~/.confi
 Para mostrar el resultado, pase el parametro `show`, ejemplo `Python3 dolar.py show`
 
 ## Modulo en Polybar
-
+```ini
 [module/dolar]  
 type = custom/script  
 exec = ~/.config/polybar/hack/scripts/dolar.py  
 interval = 60*15  
 click-left = ~/.config/polybar/hack/scripts/dolar.py show | rofi -dmenu -theme ~/.config/polybar/hack/scripts/rofi/dolar.rasi -p "Precio del Dolar"  
 content = "%output%"
+```
 
 ## Formato del JSON
-
 ```JSON 
 [
     {
