@@ -1,5 +1,4 @@
 # ScrapingDolarBs
-Scraping Web del precio del Dolar en Bolívares, script para usar en polybar, extrae y muestra resultado
 
 Script realizado para usar en la `Polybar y Rofi en Linux`
 
@@ -18,3 +17,26 @@ exec = ~/.config/polybar/hack/scripts/dolar.py
 interval = 60*15  
 click-left = ~/.config/polybar/hack/scripts/dolar.py show | rofi -dmenu -theme ~/.config/polybar/hack/scripts/rofi/dolar.rasi -p "Precio del Dolar"  
 content = "%output%"
+
+## Formato del JSON
+
+```JSON 
+[
+    {
+        "title": "BCV",
+        "amount": "Bs = 16,566"
+    },
+    {
+        "title": "Paralelo",
+        "amount": "Bs = 17,45"
+    },
+    {
+        "title": "Binance P2P",
+        "amount": "Bs = 17,400"
+    }
+]
+```
+
+## Vista Previa
+
+![Preview](https://github.com/Marco90v/ScrapingDolarBs/blob/main/dolar_polybar_rofi.png)
