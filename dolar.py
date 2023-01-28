@@ -29,7 +29,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "show":
         print(amount["title"],amount["amount"])
 
 elif len(sys.argv) == 1:
-    page = requests.get(URL)
+    page = requests.get(URL, timeout=10)
 
     soup = BeautifulSoup(page.content, 'html.parser')
 
