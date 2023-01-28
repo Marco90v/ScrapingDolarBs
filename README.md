@@ -9,14 +9,32 @@ El archivo es almacenado en la misma ruta del script, en este caso es: `~/.confi
 
 Para mostrar el resultado, pase el parametro `show`, ejemplo `Python3 dolar.py show`
 
+## Uso
+Descargue desde la terminal
+```git
+git clone https://github.com/Marco90v/ScrapingDolarBs.git
+```
+
 ## Modulo en Polybar
 ```ini
-[module/dolar]  
-type = custom/script  
-exec = ~/.config/polybar/hack/scripts/dolar.py  
-interval = 60*15  
-click-left = ~/.config/polybar/hack/scripts/dolar.py show | rofi -dmenu -theme ~/.config/polybar/hack/scripts/rofi/dolar.rasi -p "Precio del Dolar"  
-content = "%output%"
+[module/dolar]
+type = custom/script
+exec = ~/.config/polybar/hack/scripts/scraping.py
+click-left = ~/.config/polybar/hack/scripts/scraping.py show | rofi -dmenu -theme ~/.config/polybar/hack/scripts/rofi/dolar.rasi -p "Precio del Dolar"
+
+format = <label>
+label = " "
+format-prefix = "流"
+format-prefix-foreground = #008000
+format-padding = 2
+
+format-fail = <label-fail>
+label-fail = " "
+format-fail-prefix = "流"
+format-fail-prefix-foreground = #ff0000
+format-fail-padding = 2
+
+interval = 900 ;60*15
 ```
 
 ## Formato del JSON
