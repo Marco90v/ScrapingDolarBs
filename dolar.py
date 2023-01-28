@@ -6,6 +6,9 @@ import json
 import os
 import sys
 
+# GREEN = "#008000"
+# RED = "#ff0000"
+# ICON = ""
 dir = os.getcwd() + "/.config/polybar/hack/scripts"
 file  = "/dataDolarBs.json"
 URL = "https://monitordolarvenezuela.com/"
@@ -26,7 +29,6 @@ if len(sys.argv) > 1 and sys.argv[1] == "show":
         print(amount["title"],amount["amount"])
 
 elif len(sys.argv) == 1:
-    print("%{F#00C400}流%{F-}")
     page = requests.get(URL)
 
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -48,3 +50,5 @@ elif len(sys.argv) == 1:
         )
     with open(dir+file, 'w') as file:
         json.dump(myJson, file, indent=4)
+    # print("%{F"+GREEN+"}"+ICON+"%{F-}")
+    print(True)
